@@ -1,0 +1,13 @@
+body { font-family: 'Segoe UI', sans-serif; background: #f4f4f9; display: flex; justify-content: center; padding: 20px; }
+.container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+h1 { text-align: center; color: #333; }
+.add-form { display: flex; gap: 10px; margin-bottom: 20px; }
+input[type="text"] { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+ul { list-style: none; padding: 0; }
+li { display: flex; align-items: center; padding: 10px; border-bottom: 1px solid #eee; }
+.completed input { text-decoration: line-through; color: gray; }
+.filters { margin-bottom: 15px; display: flex; gap: 10px; font-size: 0.9rem; }
+.actions { display: flex; gap: 5px; }
+button, .btn-check, .btn-delete { cursor: pointer; border: none; background: #eee; padding: 5px 10px; border-radius: 4px; text-decoration: none; color: black; }
+.btn-check { background: #d4edda; }
+.btn-delete { background: #f8d7da; }

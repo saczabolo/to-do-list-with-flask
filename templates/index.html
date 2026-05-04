@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTasks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Twoja Lista</h1>
+
+        <form action="/add" method="POST" class="add-form">
+            <input type="text" name="content" placeholder="Co masz do zrobienia?" required>
+            <button type="submit">Dodaj</button>
+        </form>
+
+        <div class="filters">
+            <a href="/?filter=all">Wszystkie</a>
+            <a href="/?filter=active">Aktywne</a>
+            <a href="/?filter=completed">Zrobione</a>
+        </div>
+
+       <ul>
+           {% for task in tasks %}
+           <li class="{{ 'completed' if task.is_completed }}">
+               <form action="/edit/{{ task.id }}" method="POST" class="edit-form">
+                   <input type="text" name="new_content" value="{{ task.content }}">
+                   <div class="actions">
+                       <a href="/complete/{{ task.id }}" class="btn-check">zrobione</a>
+                       <a href="/delete/{{ task.id }}" class="btn-delete">usuń</a>
+                   </div>
+               </form>
+           </li>
+           {% endfor %}
+       </ul>
+    </div>
+</body>
+</html>
