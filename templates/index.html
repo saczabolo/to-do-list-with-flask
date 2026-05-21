@@ -28,6 +28,7 @@
                    <input type="text" name="new_content" value="{{ task.content }}">
                    <div class="actions">
                        <a href="/complete/{{ task.id }}" class="btn-check">zrobione</a>
+                       <button type="submit" class="btn-save">zapisz</button>
                        <a href="/delete/{{ task.id }}" class="btn-delete">usuń</a>
                    </div>
                </form>
